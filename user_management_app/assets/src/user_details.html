@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>User Management Application</title>
+        <!----------------------------------
+                * Font Awesome *
+          ------------------------------------>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <!----------------------------------
+                * Bootstrap *
+          ------------------------------------>
+          <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+          <!----------------------------------
+                * Custom CSS *
+          ------------------------------------>
+        <link rel="stylesheet" href="../css/user_details.css" type="text/css">
+        <link rel="stylesheet" href="../css/style.css" type="text/css">
+</head>
+<body>
+
+
+                                <!----------------------------------
+                                *  Side Bar    *
+                                ------------------------------------>
+                                <aside class="sidebar">
+                                        <div class="sidebar-logo cols-center">
+                                                <img src="../images/logo/tran_logo.png" alt="logo">
+                                                <div id="sidebar-close" class="sidebar-close">
+                                                        <i class="fas fa-arrow-left"></i>
+                                                </div>
+                                        </div>
+                                        <div class="sidebar-user">
+                                                <div class="sidebar-user-info vertical-center">
+                                                        <img src="../images/user-2.jpg" alt="user">
+                                                        <div class="sidebar-user-name">Khun Tun</div>
+                                                </div>
+                                                <button class="btns btn-outlines">
+                                                        <i class="fas fa-arrow-alt-circle-right"></i>
+                                                </button>
+                                        </div>
+                                        <!----------------------------------
+                                                *  Side Bar Menus    *
+                                        ------------------------------------>
+                                        <ul class="sidebar-menus">
+                                                <li>
+                                                        <a href="../../index.html" target="_blank"><i class="fas fa-home"></i><span>Home</span></a>
+                                                </li>
+                                                <li class="sidebar-sub-menus">
+                                                        <a href="#" class="sidebar-menu-dropdown">
+                                                                <i class="fas fa-users"></i>
+                                                                <span>User Management</span>
+                                                                <div class="dropdown-icons"></div>
+                                                        </a>
+                                                        <ul class="sidebar-menus sidebar-menu-dropdown-content">
+                                                                <li><a href="./user_crud.html" target="_blank"><span>Users</span></a></li>
+                                                                <li><a href="./role_crud.html" target="_blank"><span>Roles</span></a></li>
+                                                                <li><a href="#"><span>Edit Profile</span></a></li>
+                                                                <li><a href="#"><span>Account Settings</span></a></li>
+                                                                <li><a href="#"><span>Billing</span></a></li>
+                                                        </ul>
+                                                </li>
+                                                <li>
+                                                        <a href="#"><i class="fas fa-shopping-cart"></i><span>Sales</span></a>
+                                                </li>
+                                                <li>
+                                                        <a href="#"><i class="fas fa-chart-line"></i><span>Analytics</span></a>
+                                                </li>
+                                                <li class="sidebar-sub-menus">
+                                                        <a href="#" class="sidebar-menu-dropdown">
+                                                                <i class="fas fa-cart-plus"></i>
+                                                                <span>E-commerce</span>
+                                                                <div class="dropdown-icons"></div>
+                                                        </a>
+                                                        <ul class="sidebar-menus sidebar-menu-dropdown-content">
+                                                                <li><a href="#"><span>Add Products</span></a></li>
+                                                                <li><a href="#"><span>Products List</span></a></li>
+                                                                <li><a href="#"><span>Orders</span></a></li>
+                                                        </ul>
+                                                </li>
+                                                <li>
+                                                        <a href=""><i class="fas fa-comments"></i><span>Chat</span></a>
+                                                </li>
+                                                <li>
+                                                        <a href="#"><i class="fas fa-calendar-alt"></i><span>Calendar</span></a>
+                                                </li>
+                                                <li>
+                                                        <a href="#"><i class="fas fa-tools"></i><span>Settings</span></a>
+                                                </li>
+                                                <li>
+                                                        <a href="#"><i class="fas fa-sign-out-alt"></i><span>Logout</span></a>
+                                                </li>
+                                        </ul>
+
+                                </aside>
+
+                                <!----------------------------------
+                                        *  Main Content    *
+                                ------------------------------------>
+                                <main class="main-container">
+                                        <header class="main-header">
+                                                        <!----------------------------------
+                                                        *  Header Top Bar - Main Content    *
+                                                        ------------------------------------>
+                                                <div class="header-inner flex-between">
+                                                        <!----------------------------------
+                                                        *  Mobile Toggle - Main Content    *
+                                                        ------------------------------------>
+                                                        <div class="mobile-toggle" id="mobile-toggle">
+                                                                <i class="fas fa-bars"></i>
+                                                        </div>
+                                                        <!----------------------------------
+                                                                *  Search Bar & Icons - Main Content    *
+                                                        ------------------------------------>
+                                                        <div class="top-button vertical-center">
+                                                                <button type="button">
+                                                                        <i class="fas fa-search"></i>
+                                                                        <input type="text" class="search-bar" placeholder="Search..."></span>
+                                                                </button>
+                                                        </div>
+                                                        <div class="top-corner vertical-center">
+                                                                <div class="flag-lang">
+                                                                        <div class="flag-lang-inner">
+                                                                                <button type="button" class="flag-btns vertical-center all-corner-btns">
+                                                                                        <span class="flag-img">
+                                                                                                <img src="../images/mm.png" alt="mm">
+                                                                                        </span>
+                                                                                        <span class="lang vertical-center">MM</span>
+                                                                                </button>
+                                                                        </div>
+                                                                </div>
+                                                                <div class="dark-mode">
+                                                                        <div class="theme-toggler">
+                                                                                        <i class="fas fa-sun active"></i>
+                                                                        </div>
+                                                                </div>
+                                                                <div class="mail-icons">
+                                                                        <button type="button" class="flag-btns">
+                                                                                <span class="mails"><i class="fas fa-envelope"></i></span>
+                                                                                <span class="mails-counter">77</span>
+                                                                        </button>
+                                                                </div>
+                                                                <div class="mail-icons">
+                                                                        <button type="button" class="flag-btns">
+                                                                                <span class="mails"><i class="fas fa-bell"></i></span>
+                                                                                <span class="mails-counter">10</span>
+                                                                        </button>
+                                                                </div>
+                                                        </div>
+                                                </div>
+                                        </header>
+                                        <!----------------------------------
+                                                        *  All Users  Details Main   *
+                                                ------------------------------------>
+                                        <section id="user-main" class="container-fluid py-3">
+                                                <div class="user-title mb-3">
+                                                        <h5>Add User</h5>
+                                                </div>
+                                                <div class="main-section">
+                                                        <!----------------------------------
+                                                                        * First Row - Prefix & Roles Permissions *
+                                                                ------------------------------------>
+                                                        <div class="row">
+                                                                <!----------------------------------
+                                                                        * Prefix *
+                                                                ------------------------------------>
+                                                                <div class="col-lg-6">
+                                                                        <div class="card">
+                                                                                <div class="card-body">
+                                                                                        <form action="" method="">
+                                                                                                <div class="row mb-3">
+                                                                                                        <label for="prefix" class="col-sm-3 col-form-label">Prefix :</label>
+                                                                                                        <div class="col-sm-9">
+                                                                                                                <input type="text" name="prefix" id="prefix" class="form-control">
+                                                                                                        </div>
+                                                                                                </div>
+                                                                                                <div class="row mb-3">
+                                                                                                        <label for="firstname" class="col-sm-3 col-form-label">Firstname :</label>
+                                                                                                        <div class="col-sm-9">
+                                                                                                                <input type="text" name="firstname" id="firstname" class="form-control">
+                                                                                                        </div>
+                                                                                                </div>
+                                                                                                <div class="row mb-3">
+                                                                                                        <label for="lastname" class="col-sm-3 col-form-label">Lastname :</label>
+                                                                                                        <div class="col-sm-9">
+                                                                                                                <input type="text" name="lastname" id="lastname" class="form-control">
+                                                                                                        </div>
+                                                                                                </div>
+                                                                                                <div class="row mb-3">
+                                                                                                        <label for="email" class="col-sm-3 col-form-label">Email :</label>
+                                                                                                        <div class="col-sm-9">
+                                                                                                                <input type="email" name="email" id="email" class="form-control">
+                                                                                                        </div>
+                                                                                                </div>
+                                                                                                <div class="row mb-3 is-active">
+                                                                                                        <div class="form-check">
+                                                                                                                <input type="checkbox" id="is-active" class="form-check-input">
+                                                                                                                <label for="active" class="form-check-label">Is Active ?<span class="requires"> *</span></label>
+                                                                                                        </div>
+                                                                                                </div>
+                                                                                        </form>
+                                                                                </div>
+                                                                        </div>
+                                                                </div>
+                                                                <!----------------------------------
+                                                                        * Roles & Permissions *
+                                                                ------------------------------------>
+                                                                <div class="col-lg-6">
+                                                                        <div class="card">
+                                                                                <div class="card-body">
+                                                                                        <h5 class="card-title my-4">Roles and Permissions</h5>
+
+                                                                                        <div class="row mb-3">
+                                                                                                <label for="role" class="col-sm-2 form-check-label">Roles<span class="requires"> *</span></label>
+                                                                                                <div class="col-sm-10">
+                                                                                                        <select name="" id="" class="form-select">
+                                                                                                                <option value="">Admin</option>
+                                                                                                                <option value="">Manager</option>
+                                                                                                                <option value="">Secretary</option>
+                                                                                                                <option value="">Accountant</option>
+                                                                                                        </select>
+                                                                                                </div>
+                                                                                        </div>
+
+                                                                                        <div class="row mb-3">
+                                                                                                <div class="form-check">
+                                                                                                        <label for="myCheckbox" class="form-check-label">
+                                                                                                                <input type="checkbox" class="form-check-input"  onclick="showHideCheckbox(this)">
+                                                                                                                Allow Login
+                                                                                                        </label>
+                                                                                                </div>
+                                                                                        </div>
+                                                                                        <form action="" method="">
+                                                                                                <div class="row mb-3">
+                                                                                                        <label for="username" class="col-sm-3 col-form-label">Username :</label>
+                                                                                                        <div class="col-sm-9">
+                                                                                                                <input type="text" name="username" id="username" class="form-control">
+                                                                                                        </div>
+                                                                                                </div>
+                                                                                                <div class="row mb-3">
+                                                                                                        <label for="email" class="col-sm-3 col-form-label">Email :</label>
+                                                                                                        <div class="col-sm-9">
+                                                                                                                <input type="email" name="email" id="email" class="form-control">
+                                                                                                        </div>
+                                                                                                </div>
+                                                                                                <div class="row mb-3">
+                                                                                                        <label for="psw" class="col-sm-3 col-form-label">Password :</label>
+                                                                                                        <div class="col-sm-9">
+                                                                                                                <input type="text" name="psw" id="psw" class="form-control">
+                                                                                                        </div>
+                                                                                                </div>
+                                                                                                <div class="row mb-3">
+                                                                                                        <label for="c-psw" class="col-sm-3 col-form-label">Confirm Password :</label>
+                                                                                                        <div class="col-sm-9">
+                                                                                                                <input type="text" name="c-psw" id="c-psw" class="form-control">
+                                                                                                        </div>
+                                                                                                </div>
+
+                                                                                                <div class="row mb-3 d-flex justify-content-end access-location">
+                                                                                                        <legend>Access Locations </legend>
+                                                                                                        <div class="col-sm-10">
+                                                                                                                <div class="form-check">
+                                                                                                                        <input type="checkbox" name="" id="" class="form-check-input">
+                                                                                                                        <label for="">All Locations</label>
+                                                                                                                </div>
+                                                                                                                <div class="form-check">
+                                                                                                                        <input type="checkbox" name="" id="" class="form-check-input">
+                                                                                                                        <label for="">Demo Business (BL0001)</label>
+                                                                                                                </div>
+                                                                                                                <div class="form-check">
+                                                                                                                        <input type="checkbox" name="" id="" class="form-check-input">
+                                                                                                                        <label for="">Yankin (Yankinshop)</label>
+                                                                                                                </div>
+                                                                                                                <div class="form-check">
+                                                                                                                        <input type="checkbox" name="" id="" class="form-check-input">
+                                                                                                                        <label for="">Lux (BL0003)</label>
+                                                                                                                </div>
+                                                                                                                <div class="form-check">
+                                                                                                                        <input type="checkbox" name="" id="" class="form-check-input">
+                                                                                                                        <label for="">Main Store (BL0004)</label>
+                                                                                                                </div>
+                                                                                                        </div>
+                                                                                                </div>
+                                                                                        </form>
+                                                                                </div>
+                                                                        </div>
+                                                                </div>
+                                                        </div>
+
+
+                                                        <!----------------------------------
+                                                                        * Second Row - HRM & Payroll *
+                                                                ------------------------------------>
+                                                        <div class="row my-3">
+                                                                <!----------------------------------
+                                                                        * HRM *
+                                                                ------------------------------------>
+                                                                <div class="col-lg-6">
+                                                                                <div class="card">
+                                                                                        <div class="card-body">
+                                                                                                <h5 class="card-title">HRM Details</h5>
+                                                                                                <div class="row mb-3">
+                                                                                                        <label for="role">Department :</label>
+                                                                                                        <div class="col-sm-10">
+                                                                                                                <select name="" id="" class="form-select">
+                                                                                                                        <option value="" selected>HR manager</option>
+                                                                                                                        <option value="">HR assistant</option>
+                                                                                                                        <option value="">HR business partner</option>
+                                                                                                                        <option value="">Recruiting coordinator</option>
+                                                                                                                        <option value="">Recruiter</option>
+                                                                                                                        <option value="">Sourcer</option>
+                                                                                                                        <option value="">LoA and accommodation specialist</option>
+                                                                                                                </select>
+                                                                                                        </div>
+                                                                                                </div>
+                                                                                                <div class="row mb-3">
+                                                                                                        <label for="role">Designation :</label>
+                                                                                                        <div class="col-sm-10">
+                                                                                                                <select name="" id="" class="form-select">
+                                                                                                                        <option value="" selected>HR manager</option>
+                                                                                                                        <option value="">HR assistant</option>
+                                                                                                                        <option value="">HR business partner</option>
+                                                                                                                        <option value="">Recruiting coordinator</option>
+                                                                                                                        <option value="">Recruiter</option>
+                                                                                                                        <option value="">Sourcer</option>
+                                                                                                                        <option value="">LoA and accommodation specialist</option>
+                                                                                                                </select>
+                                                                                                        </div>
+                                                                                                </div>
+                                                                                        </div>
+                                                                                </div>
+                                                                </div>
+                                                                <!----------------------------------
+                                                                        * Payroll *
+                                                                ------------------------------------>
+                                                                <div class="col-lg-6">
+                                                                        <div class="card">
+                                                                                <div class="card-body">
+                                                                                        <h5 class="card-title">Payroll</h5>
+                                                                                        <div class="row mb-3">
+                                                                                                <label for="role">Primary Work Location :</label>
+                                                                                                <div class="col-sm-10">
+                                                                                                        <select name="" id="" class="form-select">
+                                                                                                                <option value="" selected>Please Select</option>
+                                                                                                                <option value="">Demo Business (BL0001)</option>
+                                                                                                                <option value="">Yankin (Yankinshop)</option>
+                                                                                                                <option value="">Lux (BL0003)</option>
+                                                                                                                <option value="">Main Store (BL0004)</option>
+                                                                                                        </select>
+                                                                                                </div>
+                                                                                        </div>
+                                                                                        <div class="row mb-3">
+                                                                                                <label for="role">Basic Salary :</label>
+                                                                                                <input type="text" class="form-control" placeholder="basic salary">
+                                                                                                <select name="" id="" class="form-select">
+                                                                                                        <option value="">Per Month</option>
+                                                                                                        <option value="">Per Week</option>
+                                                                                                        <option value="">Per Day</option>
+                                                                                                </select>
+                                                                                        </div>
+                                                                                        <div class="row mb-3">
+                                                                                                <label for="role">Pay Components :</label>
+                                                                                                <input type="text" class="form-control">
+                                                                                        </div>
+                                                                                </div>
+                                                                        </div>
+                                                                </div>
+                                                        </div>
+
+
+                                                        <!----------------------------------
+                                                                        * Third Row - Information *
+                                                                ------------------------------------>
+
+                                                                <div class="more-info container-fluid">
+                                                                        <h5>More Informations</h5>
+                                                                        <!----------------------------------
+                                                                                * First Row In Information *
+                                                                        ------------------------------------>
+                                                                        <div class="row">
+                                                                                <div class="col-lg-3 col-sm-6">
+                                                                                        <div class="row mb-3">
+                                                                                                <label for="dob">Date Of Birth :</label>
+                                                                                                <input type="date" class="form-control" placeholder="date of birth:">
+                                                                                        </div>
+                                                                                </div>
+                                                                                <div class="col-lg-3 col-sm-6">
+                                                                                        <div class="row mb-3">
+                                                                                                <label for="gender">Gender :</label>
+                                                                                                <select name="" id="" class="form-select">
+                                                                                                        <option value="">Please Select</option>
+                                                                                                        <option value="">Male</option>
+                                                                                                        <option value="">Female</option>
+                                                                                                        <option value="">Others</option>
+                                                                                                </select>
+                                                                                        </div>
+                                                                                </div>
+                                                                                <div class="col-lg-3 col-sm-6">
+                                                                                        <div class="row mb-3">
+                                                                                                <label for="marry">Marital Status :</label>
+                                                                                                <select name="" id="" class="form-select">
+                                                                                                        <option value="">Marital Status</option>
+                                                                                                        <option value="">Married</option>
+                                                                                                        <option value="">Unmarried</option>
+                                                                                                        <option value="">Divorced</option>
+                                                                                                </select>
+                                                                                        </div>
+                                                                                </div>
+                                                                                <div class="col-lg-3 col-sm-6">
+                                                                                        <div class="row mb-3">
+                                                                                                <label for="Blood">Blood Group: :</label>
+                                                                                                <select name="" id="" class="form-select">
+                                                                                                        <option value="">A</option>
+                                                                                                        <option value="">B</option>
+                                                                                                        <option value="">A+B</option>
+                                                                                                        <option value="">O</option>
+                                                                                                </select>
+                                                                                        </div>
+                                                                                </div>
+                                                                        </div>
+                                                                        <!----------------------------------
+                                                                                * Second Row In Information *
+                                                                        ------------------------------------>
+                                                                        <div class="row">
+                                                                                <div class="col-lg-3 col-sm-6">
+                                                                                        <div class="row mb-3">
+                                                                                                <label for="number">Mobile Number :</label>
+                                                                                                <input type="number" class="form-control" placeholder="mobile number">
+                                                                                        </div>
+                                                                                </div>
+                                                                                <div class="col-lg-3 col-sm-6">
+                                                                                        <div class="row mb-3">
+                                                                                                <label for="al-number">Alternate Contact Number :</label>
+                                                                                                <input type="number" class="form-control" placeholder="alternate contact  number">
+                                                                                        </div>
+                                                                                </div>
+                                                                                <div class="col-lg-3 col-sm-6">
+                                                                                        <div class="row mb-3">
+                                                                                                <label for="f-number">Family Contact Number :</label>
+                                                                                                <input type="number" class="form-control" placeholder="family contact  number">
+                                                                                        </div>
+                                                                                </div>
+                                                                                <div class="col-lg-3 col-sm-6">
+                                                                                        <div class="row mb-3">
+                                                                                                <label for="Blood">Facebook Link :</label>
+                                                                                                <input type="text" class="form-control" placeholder="facebook link">
+                                                                                        </div>
+                                                                                </div>
+                                                                        </div>
+                                                                        <!----------------------------------
+                                                                                * Third Row In Information *
+                                                                        ------------------------------------>
+                                                                        <div class="row">
+                                                                                <div class="col-lg-3 col-sm-6">
+                                                                                        <div class="row mb-3">
+                                                                                                <label for="t-link">Twitter Link :</label>
+                                                                                                <input type="text" class="form-control" placeholder="twitter link">
+                                                                                        </div>
+                                                                                </div>
+                                                                                <div class="col-lg-3 col-sm-6">
+                                                                                        <div class="row mb-3">
+                                                                                                <label for="in-link">Instagram Link :</label>
+                                                                                                <input type="text" class="form-control" placeholder="Instagram link">
+                                                                                        </div>
+                                                                                </div>
+                                                                                <div class="col-lg-3 col-sm-6">
+                                                                                        <div class="row mb-3">
+                                                                                                <label for="wh-link">Whatsapp Link :</label>
+                                                                                                <input type="text" class="form-control" placeholder="whatsapp link">
+                                                                                        </div>
+                                                                                </div>
+                                                                                <div class="col-lg-3 col-sm-6">
+                                                                                        <div class="row mb-3">
+                                                                                                <label for="linked-link">Linkedin Link :</label>
+                                                                                                <input type="text" class="form-control" placeholder="linkedin link">
+
+                                                                                        </div>
+                                                                                </div>
+                                                                        </div>
+
+
+                                                                        <!----------------------------------
+                                                                                * Fourth Row In Information *
+                                                                        ------------------------------------>
+                                                                        <div class="row">
+                                                                                <div class="col-lg-3 col-sm-6">
+                                                                                        <div class="row mb-3">
+                                                                                                <label for="v-id">Viber ID :</label>
+                                                                                                <input type="number" class="form-control" placeholder="viber id">
+                                                                                        </div>
+                                                                                </div>
+                                                                                <div class="col-lg-3 col-sm-6">
+                                                                                        <div class="row mb-3">
+                                                                                                <label for="s-id">Skype ID :</label>
+                                                                                                <input type="number" class="form-control" placeholder="skype id">
+                                                                                        </div>
+                                                                                </div>
+                                                                                <div class="col-lg-3 col-sm-6">
+                                                                                        <div class="row mb-3">
+                                                                                                <label for="web-link">Website Address :</label>
+                                                                                                <input type="text" class="form-control" placeholder="optional">
+                                                                                        </div>
+                                                                                </div>
+                                                                                <div class="col-lg-3 col-sm-6">
+                                                                                        <div class="row mb-3">
+                                                                                                <label for="com-link">Company Name :</label>
+                                                                                                <input type="text" class="form-control" placeholder="optional">
+                                                                                        </div>
+                                                                                </div>
+                                                                        </div>
+                                                                        <!----------------------------------
+                                                                                * Fifth Row In Information *
+                                                                        ------------------------------------>
+                                                                        <div class="row">
+                                                                                <div class="col-lg-3 col-sm-6">
+                                                                                        <div class="row mb-3">
+                                                                                                <label for="g-full-name">Guardian Full Name :</label>
+                                                                                                <input type="text" class="form-control" placeholder="guardian full name">
+                                                                                        </div>
+                                                                                </div>
+                                                                                <div class="col-lg-3 col-sm-6">
+                                                                                        <div class="row mb-3">
+                                                                                                <label for="g-w-name">Guardian Western Name :</label>
+                                                                                                <input type="text" class="form-control" placeholder="guardian western name">
+                                                                                        </div>
+                                                                                </div>
+                                                                                <div class="col-lg-3 col-sm-6">
+                                                                                        <div class="row mb-3">
+                                                                                                <label for="p-name">ID Proof Name :</label>
+                                                                                                <input type="text" class="form-control" placeholder="ID proof name">
+                                                                                        </div>
+                                                                                </div>
+                                                                                <div class="col-lg-3 col-sm-6">
+                                                                                        <div class="row mb-3">
+                                                                                                <label for="p-number">ID Proof Number :</label>
+                                                                                                <input type="text" class="form-control" placeholder="ID proof number">
+                                                                                        </div>
+                                                                                </div>
+                                                                        </div>
+                                                                        <!----------------------------------
+                                                                                * Sixth Row In Information *
+                                                                        ------------------------------------>
+                                                                        <div class="row">
+                                                                                <div class="col-lg-6">
+                                                                                        <div class="row mb-3 pe-2">
+                                                                                                <label for="p-address">Permanent Address :</label>
+                                                                                                <textarea rows="4" placeholder="permanent address"></textarea>
+                                                                                        </div>
+                                                                                </div>
+                                                                                <div class="col-lg-6">
+                                                                                        <div class="row mb-3">
+                                                                                                <div class="row mb-3">
+                                                                                                        <label for="c-address">Current Address :</label>
+                                                                                                        <textarea rows="4" placeholder="current address"></textarea>
+                                                                                                </div>
+                                                                                        </div>
+                                                                                </div>
+                                                                        </div>
+
+                                                                        <hr class="rular"/>
+
+
+                                                                        <!----------------------------------
+                                                                                * Bank Details *
+                                                                        ------------------------------------>
+                                                                        <div class="details">
+                                                                                <h5>Bank Details :</h5>
+                                                                                <!----------------------------------
+                                                                                        * First Row In Bank Details *
+                                                                                ------------------------------------>
+                                                                                <div class="row">
+                                                                                        <div class="col-lg-3 col-sm-6">
+                                                                                                <div class="row mb-3">
+                                                                                                        <label for="account-name">Account Holder's Name :</label>
+                                                                                                        <input type="text" class="form-control" placeholder="account holder's name">
+                                                                                                </div>
+                                                                                        </div>
+                                                                                        <div class="col-lg-3 col-sm-6">
+                                                                                                <div class="row mb-3">
+                                                                                                        <label for="account-num">Account Number :</label>
+                                                                                                                <input type="text" class="form-control" placeholder="account number">
+                                                                                                </div>
+                                                                                        </div>
+                                                                                        <div class="col-lg-3 col-sm-6">
+                                                                                                <div class="row mb-3">
+                                                                                                        <label for="bank-name">Bank Name :</label>
+                                                                                                        <input type="text" class="form-control" placeholder="bank name">
+                                                                                                </div>
+                                                                                        </div>
+                                                                                        <div class="col-lg-3 col-sm-6">
+                                                                                                <div class="row mb-3">
+                                                                                                        <label for="bank-name">Bank Identifier Code : <span class="requires"> *</span></label>
+                                                                                                        <input type="number" class="form-control" placeholder="bank identifier code">
+                                                                                                </div>
+                                                                                        </div>
+                                                                                </div>
+                                                                                <!----------------------------------
+                                                                                        * Second Row In Bank Details *
+                                                                                ------------------------------------>
+                                                                                <div class="row">
+                                                                                        <div class="col-lg-3 col-sm-6">
+                                                                                                <div class="row mb-3">
+                                                                                                        <label for="branch">Branch :</label>
+                                                                                                        <input type="text" class="form-control" placeholder="branch">
+                                                                                                </div>
+                                                                                        </div>
+                                                                                        <div class="col-lg-3 col-sm-6">
+                                                                                                <div class="row mb-3">
+                                                                                                        <label for="tax-id">Tax Payer ID : <span class="requires"> *</span></label>
+                                                                                                        <input type="number" class="form-control" placeholder="tax payer ID">
+                                                                                                </div>
+                                                                                        </div>
+                                                                                        <div class="col-lg-3 col-sm-6">
+                                                                                                <div class="row mb-3">
+                                                                                                        <label for="mon-salary">Monthly Salary :</label>
+                                                                                                        <input type="number" class="form-control" placeholder="monthly salary">
+                                                                                                </div>
+                                                                                        </div>
+                                                                                        <div class="col-lg-3 col-sm-6">
+                                                                                                <div class="row mb-3">
+                                                                                                        <label for="position">Position :</label>
+                                                                                                        <input type="text" class="form-control" placeholder="position">
+                                                                                                </div>
+                                                                                        </div>
+                                                                                </div>
+
+                                                                        </div>
+                                                                </div>
+
+
+
+                                                                <!----------------------------------
+                                                                        *Fourth  Row - Sales *
+                                                                ------------------------------------>
+                                                                <div class="row">
+                                                                        <div class="col-12">
+                                                                        <form action="" method="">
+                                                                                <!----------------------------------
+                                                                                        * First Row In Sales *
+                                                                                ------------------------------------>
+                                                                                <div class="row">
+                                                                                        <h5 class="sales-title">Sales</h5>
+                                                                                        <div class="col-lg-4 col-sm-6">
+                                                                                                <div class="row mb-3">
+                                                                                                        <label for="sales">Sales Commission Percentage (%) :</label>
+                                                                                                        <input type="text" class="form-control" placeholder="sales percentage (%)">
+                                                                                                </div>
+                                                                                        </div>
+                                                                                        <div class="col-lg-4 col-sm-6">
+                                                                                                <div class="row mb-3">
+                                                                                                        <label for="sales">Max sales Discount Percent :</label>
+                                                                                                        <input type="text" class="form-control" placeholder="sales discount">
+                                                                                                </div>
+                                                                                        </div>
+                                                                                        <div class="col-lg-4 col-sm-6"></div>
+                                                                                </div>
+                                                                                <!----------------------------------
+                                                                                        * Second Row In Sales *
+                                                                                ------------------------------------>
+                                                                                <div class="row">
+                                                                                        <div class="col-lg-5 col-sm-6">
+                                                                                                <div class="row mb-3">
+                                                                                                        <div class="form-check">
+                                                                                                                <label for="myCheckbox" class="form-check-label">
+                                                                                                                        <input type="checkbox"  class="form-check-input" onclick="showHideCheckbox(this)">
+                                                                                                                        Allow Selected Contacts
+                                                                                                                        <span class="requires"> *</span>
+                                                                                                                </label>
+                                                                                                        </div>
+                                                                                                </div>
+                                                                                        </div>
+                                                                                        <div class="col-lg-7 col-sm-6 access-location">
+                                                                                                <div class="row mb-3">
+                                                                                                        <label for="role" class="col-sm-4 form-check-label">Select Contacts :<span class="requires"> *</span></label>
+                                                                                                        <div class="col-sm-8">
+                                                                                                                <select name="" id="" class="form-select">
+                                                                                                                        <option value="">Jonas Martins</option>
+                                                                                                                        <option value="">Robert Queval</option>
+                                                                                                                        <option value="">Jack Rodrigues</option>
+                                                                                                                        <option value="">Daisy Paul</option>
+                                                                                                                </select>
+                                                                                                        </div>
+                                                                                                </div>
+                                                                                        </div>
+                                                                                        <!-- <div class="col-lg-4 col-sm-6"></div> -->
+                                                                                </div>
+                                                                        </form>
+                                                                        </div>
+                                                                </div>
+
+
+                                                                <div class="btn-group d-flex justify-content-center">
+                                                                        <button type="submit" class="btn btn-secondary">Save</button>
+                                                                </div>
+
+                                                </div>
+                                        </section>
+
+                                </main>
+
+
+
+                                <!----------------------------------
+                                        *Overlay    *
+                                ------------------------------------>
+                                <div class="overlay"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!----------------------------------
+                * Bootstrap *
+          ------------------------------------>
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+
+          <!----------------------------------
+                * jQuery *
+          ------------------------------------>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+          <!----------------------------------
+                * Custom JS *
+          ------------------------------------>
+          <script src="../js/app.js" type="text/javascript"></script>
+          <script src="../js/user_details.js" type="text/javascript"></script>
+</body>
+</html>

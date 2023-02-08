@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>User Management Application</title>
+        <!----------------------------------
+                * Font Awesome *
+          ------------------------------------>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+          <!----------------------------------
+                * Custom CSS *
+          ------------------------------------>
+        <link rel="stylesheet" href="./assets/css/style.css" type="text/css">
+        <link rel="stylesheet" href="./assets/css/grid.css" type="text/css">
+</head>
+<body>
+
+
+           <!----------------------------------
+               *  Side Bar    *
+          ------------------------------------>
+                <aside class="sidebar">
+                        <div class="sidebar-logo cols-center">
+                                <img src="./assets/images/logo/tran_logo.png" alt="logo">
+                                <div id="sidebar-close" class="sidebar-close">
+                                        <i class="fas fa-arrow-left"></i>
+                                </div>
+                        </div>
+                        <div class="sidebar-user">
+                                <div class="sidebar-user-info vertical-center">
+                                        <img src="./assets/images/user-2.jpg" alt="user">
+                                        <div class="sidebar-user-name">Khun Tun</div>
+                                </div>
+                                <button class="btns btn-outlines">
+                                        <i class="fas fa-arrow-alt-circle-right"></i>
+                                </button>
+                        </div>
+                        <!----------------------------------
+                                *  Side Bar Menus    *
+                        ------------------------------------>
+                        <ul class="sidebar-menus">
+                                <li>
+                                        <a href="index.html"><i class="fas fa-home"></i><span>Home</span></a>
+                                </li>
+                                <li class="sidebar-sub-menus">
+                                        <a href="#" class="sidebar-menu-dropdown">
+                                                <i class="fas fa-users"></i>
+                                                <span>User Management</span>
+                                                <div class="dropdown-icons"></div>
+                                        </a>
+                                        <ul class="sidebar-menus sidebar-menu-dropdown-content">
+                                                <li><a href="./assets/src/user_crud.html" target="_blank"><span>Users</span></a></li>
+                                                <li><a href="./assets/src/role_crud.html" target="_blank"><span>Roles</span></a></li>
+                                                <li><a href="#"><span>Edit Profile</span></a></li>
+                                                <li><a href="#"><span>Account Settings</span></a></li>
+                                                <li><a href="#"><span>Billing</span></a></li>
+                                        </ul>
+                                </li>
+                                <li>
+                                        <a href="#"><i class="fas fa-shopping-cart"></i><span>Sales</span></a>
+                                </li>
+                                <li>
+                                        <a href="#"><i class="fas fa-chart-line"></i><span>Analytics</span></a>
+                                </li>
+                                <li class="sidebar-sub-menus">
+                                        <a href="#" class="sidebar-menu-dropdown">
+                                                <i class="fas fa-cart-plus"></i>
+                                                <span>E-commerce</span>
+                                                <div class="dropdown-icons"></div>
+                                        </a>
+                                        <ul class="sidebar-menus sidebar-menu-dropdown-content">
+                                                <li><a href="#"><span>Add Products</span></a></li>
+                                                <li><a href="#"><span>Products List</span></a></li>
+                                                <li><a href="#"><span>Orders</span></a></li>
+                                        </ul>
+                                </li>
+                                <li>
+                                        <a href=""><i class="fas fa-comments"></i><span>Chat</span></a>
+                                </li>
+                                <li>
+                                        <a href="#"><i class="fas fa-calendar-alt"></i><span>Calendar</span></a>
+                                </li>
+                                <li>
+                                        <a href="#"><i class="fas fa-tools"></i><span>Settings</span></a>
+                                </li>
+                                <li>
+                                        <a href="#"><i class="fas fa-sign-out-alt"></i><span>Logout</span></a>
+                                </li>
+                        </ul>
+
+                </aside>
+
+
+                <!----------------------------------
+                        *  Main Content    *
+                ------------------------------------>
+                <main class="main-container">
+                        <header class="main-header">
+                                        <!----------------------------------
+                                        *  Header Top Bar - Main Content    *
+                                        ------------------------------------>
+                                <div class="header-inner flex-between">
+                                        <!----------------------------------
+                                        *  Mobile Toggle - Main Content    *
+                                        ------------------------------------>
+                                        <div class="mobile-toggle" id="mobile-toggle">
+                                                <i class="fas fa-bars"></i>
+                                        </div>
+                                        <!----------------------------------
+                                                *  Search Bar & Icons - Main Content    *
+                                        ------------------------------------>
+                                        <div class="top-button vertical-center">
+                                                <button type="button">
+                                                        <i class="fas fa-search"></i>
+                                                        <input type="text" class="search-bar" placeholder="Search..."></span>
+                                                </button>
+                                        </div>
+                                        <div class="top-corner vertical-center">
+                                                <div class="flag-lang">
+                                                        <div class="flag-lang-inner">
+                                                                <button type="button" class="flag-btns vertical-center all-corner-btns">
+                                                                        <span class="flag-img">
+                                                                                <img src="./assets/images/mm.png" alt="mm">
+                                                                        </span>
+                                                                        <span class="lang vertical-center">MM</span>
+                                                                </button>
+                                                        </div>
+                                                </div>
+                                                <div class="dark-mode">
+                                                        <div class="theme-toggler">
+                                                                        <i class="fas fa-sun active"></i>
+                                                        </div>
+                                                </div>
+                                                <div class="mail-icons">
+                                                        <button type="button" class="flag-btns">
+                                                                <span class="mails"><i class="fas fa-envelope"></i></span>
+                                                                <span class="mails-counter">77</span>
+                                                        </button>
+                                                </div>
+                                                <div class="mail-icons">
+                                                        <button type="button" class="flag-btns">
+                                                                <span class="mails"><i class="fas fa-bell"></i></span>
+                                                                <span class="mails-counter">10</span>
+                                                        </button>
+                                                </div>
+                                        </div>
+                                </div>
+                        </header>
+                        <div class="main-content">
+                                 <!----------------------------------
+                                        * First Row In  Main Content    *
+                                ------------------------------------>
+                                <div class="rows">
+                                        <div class="cols-3 cols-md-6 cols-sm-12">
+                                              <div class="box box-hover">
+                                                        <div class="counter">
+                                                                <div class="counter-title">
+                                                                        <span>Total Sales</span>
+                                                                </div>
+                                                                <div class="counter-info flex-between">
+                                                                        <div class="counter-counter">
+                                                                               Kyats10,00000
+                                                                        </div>
+                                                                        <i class="fas fa-balance-scale"></i>
+                                                                </div>
+                                                        </div>
+                                              </div>
+                                        </div>
+                                        <div class="cols-3 cols-md-6 cols-sm-12">
+                                                <div class="box box-hover">
+                                                        <div class="counter">
+                                                                <div class="counter-title">
+                                                                        <span>Total Expenses</span>
+                                                                </div>
+                                                                <div class="counter-info flex-between">
+                                                                        <div class="counter-counter">
+                                                                                Kyats 500,000
+                                                                        </div>
+                                                                        <i class="fas fa-hand-holding-usd"></i>
+                                                                </div>
+                                                        </div>
+                                              </div>
+                                        </div>
+                                        <div class="cols-3 cols-md-6 cols-sm-12">
+                                                <div class="box box-hover">
+                                                        <div class="counter">
+                                                                <div class="counter-title">
+                                                                        <span>Total Income</span>
+                                                                </div>
+                                                                <div class="counter-info flex-between">
+                                                                        <div class="counter-counter">
+                                                                                Kyats 12,00000
+                                                                        </div>
+                                                                        <i class="fas fa-chart-line"></i>
+                                                                </div>
+                                                        </div>
+                                              </div>
+                                        </div>
+                                        <div class="cols-3 cols-md-6 cols-sm-12">
+                                                <div class="box box-hover">
+                                                        <div class="counter">
+                                                                <div class="counter-title">
+                                                                        <span>Daily Visitors</span>
+                                                                </div>
+                                                                <div class="counter-info flex-between">
+                                                                        <div class="counter-counter">
+                                                                                5077
+                                                                        </div>
+                                                                        <i class="fas fa-user"></i>
+                                                                </div>
+                                                        </div>
+                                              </div>
+                                        </div>
+                                </div>
+                                <!----------------------------------
+                                        * Second Row In  Main Content    *
+                                ------------------------------------>
+                                <div class="rows">
+                                        <div class="cols-3 cols-md-6 cols-sm12">
+                                                <div class="box box-hover top-height">
+                                                        <div class="box-header">
+                                                                Top Products
+                                                        </div>
+                                                        <div class="box-body">
+                                                                <ul class="product-list">
+                                                                        <li class="products-list-item flex-between">
+                                                                                <div class="item-info vertical-center">
+                                                                                        <img src="./assets/images/jacket.jpg" alt="p-1">
+                                                                                        <div class="item-name">
+                                                                                                <div class="product-name">Jacket</div>
+                                                                                                <div class="product-content">Clothes</div>
+                                                                                        </div>
+                                                                                </div>
+                                                                                <div class="item-sales-info">
+                                                                                        <div class="product-content">Sales</div>
+                                                                                        <div class="product-sales">15,000</div>
+                                                                                </div>
+                                                                        </li>
+                                                                        <li class="products-list-item flex-between">
+                                                                                <div class="item-info vertical-center">
+                                                                                        <img src="./assets/images/hoodie.jpg" alt="p-2">
+                                                                                        <div class="item-name">
+                                                                                                <div class="product-name">Hoodie</div>
+                                                                                                <div class="product-content">Clothes</div>
+                                                                                        </div>
+                                                                                </div>
+                                                                                <div class="item-sales-info">
+                                                                                        <div class="product-content">Sales</div>
+                                                                                        <div class="product-sales">20,000</div>
+                                                                                </div>
+                                                                        </li>
+                                                                        <li class="products-list-item flex-between">
+                                                                                <div class="item-info vertical-center">
+                                                                                        <img src="./assets/images/sweater.jpg" alt="p-3">
+                                                                                        <div class="item-name">
+                                                                                                <div class="product-name">Sweater</div>
+                                                                                                <div class="product-content">Clothes</div>
+                                                                                        </div>
+                                                                                </div>
+                                                                                <div class="item-sales-info">
+                                                                                        <div class="product-content">Sales</div>
+                                                                                        <div class="product-sales">30,000</div>
+                                                                                </div>
+                                                                        </li>
+                                                                        <li class="products-list-item flex-between">
+                                                                                <div class="item-info vertical-center">
+                                                                                        <img src="./assets/images/t-shirt.jpg" alt="p-4">
+                                                                                        <div class="item-name">
+                                                                                                <div class="product-name">T-shirt</div>
+                                                                                                <div class="product-content">Clothes</div>
+                                                                                        </div>
+                                                                                </div>
+                                                                                <div class="item-sales-info">
+                                                                                        <div class="product-content">Sales</div>
+                                                                                        <div class="product-sales">8,000</div>
+                                                                                </div>
+                                                                        </li>
+                                                                        <li class="products-list-item flex-between">
+                                                                                <div class="item-info vertical-center">
+                                                                                        <img src="./assets/images/imrolex.jpg" alt="p-5">
+                                                                                        <div class="item-name">
+                                                                                                <div class="product-name">Rolex</div>
+                                                                                                <div class="product-content">Watch</div>
+                                                                                        </div>
+                                                                                </div>
+                                                                                <div class="item-sales-info">
+                                                                                        <div class="product-content">Sales</div>
+                                                                                        <div class="product-sales">$100,000</div>
+                                                                                </div>
+                                                                        </li>
+
+                                                                </ul>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="cols-4 cols-md-6 cols-sm12">
+                                                <div class=" box-hover sale-analytics">
+                                                                <h2 class="box-header">Sales Analytics</h2>
+                                                                <div class="sale-analytics-item vertical-center online">
+                                                                                <div class="analytics-icon">
+                                                                                        <i class="fas fa-shopping-cart"></i>
+                                                                                </div>
+                                                                                <div class="analytics-right">
+                                                                                        <div class="analytics-info">
+                                                                                                <h3>ONLINE ORDERS</h3>
+                                                                                                <small class="text-muted">Last 24 Hours </small>
+                                                                                        </div>
+                                                                                        <h5 class="percent-plus">+50%</h5>
+                                                                                        <h3>3000</h3>
+                                                                                </div>
+                                                                </div>
+                                                                <div class="sale-analytics-item vertical-center offline">
+                                                                                <div class="analytics-icon">
+                                                                                        <i class="fas fa-shopping-bag"></i>
+                                                                                </div>
+                                                                                <div class="analytics-right">
+                                                                                        <div class="analytics-info">
+                                                                                                <h3>OFFLINE ORDERS</h3>
+                                                                                                <small class="text-muted">Last 24 Hours </small>
+                                                                                        </div>
+                                                                                        <h5 class="percent-minus">-25%</h5>
+                                                                                        <h3>246</h3>
+                                                                                </div>
+                                                                </div>
+                                                                <div class="sale-analytics-item vertical-center customers">
+                                                                                <div class="analytics-icon">
+                                                                                        <i class="fas fa-users"></i>
+                                                                                </div>
+                                                                                <div class="analytics-right">
+                                                                                        <div class="analytics-info">
+                                                                                                <h3>NEW CUSTOMERS</h3>
+                                                                                                <small class="text-muted">Last 24 Hours </small>
+                                                                                        </div>
+                                                                                        <h5 class="percent-plus">+45%</h5>
+                                                                                        <h3>568</h3>
+                                                                                </div>
+                                                                </div>
+                                                </div>
+                                        </div>
+                                        <div class="cols-5 cols-md-6 cols-sm12">
+                                                <div class="box box-hover top-height">
+                                                        <div class="box-header">Customers</div>
+                                                        <div class="box-body">
+                                                                <div id="customer-chart"></div>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="cols-12">
+                                                <div class="box box-hover">
+                                                        <div class="box-header">Recent Orders</div>
+                                                        <div class="box-body overflow-scrolls">
+                                                                <table>
+                                                                        <thead>
+                                                                                <tr>
+                                                                                        <th>ID</th>
+                                                                                        <th>Customer Name</th>
+                                                                                        <th>Date</th>
+                                                                                        <th>Order Status</th>
+                                                                                        <th>Pyment Status</th>
+                                                                                        <th>Total</th>
+                                                                                </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                                <tr>
+                                                                                        <td>2081</td>
+                                                                                        <td>
+                                                                                                <div class="order-owner">
+                                                                                                        <img src="./assets/images/user-2.jpg" alt="user-1">
+                                                                                                        <span>Khun Tun</span>
+                                                                                                </div>
+
+                                                                                        </td>
+                                                                                        <td>5-2-2023</td>
+                                                                                        <td>
+                                                                                                <span class="order-status order-ready">Ready</span>
+                                                                                        </td>
+                                                                                        <td>
+                                                                                                <div class="payment-status payment-pending vertical-center">
+                                                                                                        <div class="dot"></div>
+                                                                                                        <span>Pending</span>
+                                                                                                </div>
+                                                                                        </td>
+                                                                                        <td>Kyats500,000</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                        <td>2082</td>
+                                                                                        <td>
+                                                                                                <div class="order-owner">
+                                                                                                        <img src="./assets/images/user-1.jpg" alt="user-2">
+                                                                                                        <span>Moe Moe</span>
+                                                                                                </div>
+                                                                                        </td>
+                                                                                        <td>3-2-2023</td>
+                                                                                        <td>
+                                                                                                <span class="order-status order-hold">On hold</span>
+                                                                                        </td>
+                                                                                        <td>
+                                                                                                <div class="payment-status payment-failed vertical-center">
+                                                                                                        <div class="dot"></div>
+                                                                                                        <span>Failed</span>
+                                                                                                </div>
+                                                                                        </td>
+                                                                                        <td>Kyats200,000</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                        <td>2083</td>
+                                                                                        <td>
+                                                                                                <div class="order-owner">
+                                                                                                        <img src="./assets/images/user-5.jpg" alt="user-3">
+                                                                                                        <span>Han Htun</span>
+                                                                                                </div>
+                                                                                        </td>
+                                                                                        <td>1-2-2023</td>
+                                                                                        <td>
+                                                                                                <span class="order-status order-processing">Processing</span>
+                                                                                        </td>
+                                                                                        <td>
+                                                                                                <div class="payment-status payment-paid vertical-center">
+                                                                                                        <div class="dot"></div>
+                                                                                                        <span>Paid</span>
+                                                                                                </div>
+                                                                                        </td>
+                                                                                        <td>Kyats400,000</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                        <td>2084</td>
+                                                                                        <td>
+                                                                                                <div class="order-owner">
+                                                                                                        <img src="./assets/images/user-3.jpg" alt="user-4">
+                                                                                                        <span>Han Thu Zar</span>
+                                                                                                </div>
+                                                                                        </td>
+                                                                                        <td>3-2-2023</td>
+                                                                                        <td>
+                                                                                                <span class="order-status order-shipped">Shipped</span>
+                                                                                        </td>
+                                                                                        <td>
+                                                                                                <div class="payment-status payment-paid vertical-center">
+                                                                                                        <div class="dot"></div>
+                                                                                                        <span>Paid</span>
+                                                                                                </div>
+                                                                                        </td>
+                                                                                        <td>Kyats20,000</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                        <td>2085</td>
+                                                                                        <td>
+                                                                                                <div class="order-owner">
+                                                                                                        <img src="./assets/images/user-6.jpg" alt="user-5">
+                                                                                                        <span>Zaw Zaw</span>
+                                                                                                </div>
+                                                                                        </td>
+                                                                                        <td>2-2-2023</td>
+                                                                                        <td>
+                                                                                                <span class="order-status order-shipped">Shipped</span>
+                                                                                        </td>
+                                                                                        <td>
+                                                                                                <div class="payment-status payment-paid vertical-center">
+                                                                                                        <div class="dot"></div>
+                                                                                                        <span>Paid</span>
+                                                                                                </div>
+                                                                                        </td>
+                                                                                        <td>Kyats50,000</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                        <td>2086</td>
+                                                                                        <td>
+                                                                                                <div class="order-owner">
+                                                                                                        <img src="./assets/images/user-4.jpg" alt="user-6">
+                                                                                                        <span>Nadi</span>
+                                                                                                </div>
+                                                                                        </td>
+                                                                                        <td>4-2-2023</td>
+                                                                                        <td>
+                                                                                                <span class="order-status order-shipped">Shipped</span>
+                                                                                        </td>
+                                                                                        <td>
+                                                                                                <div class="payment-status payment-paid vertical-center">
+                                                                                                        <div class="dot"></div>
+                                                                                                        <span>Paid</span>
+                                                                                                </div>
+                                                                                        </td>
+                                                                                        <td>Kyats60,000</td>
+                                                                                </tr>
+                                                                        </tbody>
+                                                                </table>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                </main>
+
+
+
+
+
+                 <!----------------------------------
+                        *Overlay    *
+                ------------------------------------>
+                <div class="overlay"></div>
+
+
+
+
+        <!----------------------------------
+                * jQuery *
+          ------------------------------------>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+        <!----------------------------------
+                * Apex Charts *
+          ------------------------------------>
+
+                <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+        <!----------------------------------
+                * Custom JS *
+          ------------------------------------>
+<script src="./assets/js/app.js" type="text/javascript"></script>
+</body>
+</html>
